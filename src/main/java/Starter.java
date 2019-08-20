@@ -28,9 +28,9 @@ public class Starter
     {
         try
         {
-            String[] tokens = image.attr("src").split("/");
+            String[] tokens = image.absUrl("src").split("/");
             String fileName = tokens[tokens.length - 1];
-            URL url = new URL(image.attr("src"));
+            URL url = new URL(image.absUrl("src"));
             BufferedImage input = ImageIO.read(url);
             String pathname = "images/" + fileName;
             File output = new File(pathname);
